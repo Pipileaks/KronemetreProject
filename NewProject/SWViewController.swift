@@ -31,10 +31,15 @@ var baslangicZamani = TimeInterval()
         let strsalie = String(format: "%02d", salise)
         
         saat.text = "\(strdakika):\(strsaniye):\(strsalie)"
+        
+        if saniye > 4 {
+            zamanlayici.invalidate()
+        }
     }
     
     var zamanlayici = Timer()
     
+   
     @IBOutlet weak var saat: UILabel!
     
     @IBAction func basla(_ sender: UIButton) {
@@ -44,11 +49,10 @@ var baslangicZamani = TimeInterval()
         
         baslangicZamani = NSDate.timeIntervalSinceReferenceDate
         
+       
+        
     }
     
-    @IBAction func dur(_ sender: UIButton) {
-        
-        zamanlayici.invalidate()
-    }
+  
     
 }
