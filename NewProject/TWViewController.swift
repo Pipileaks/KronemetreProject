@@ -14,9 +14,12 @@ class TWViewController: UIViewController {
     @IBOutlet weak var parolaText: UITextField!
     @IBOutlet weak var kontrolEmail: UITextField!
     @IBOutlet weak var parolaKontrol: UITextField!
+    @IBOutlet weak var ekranMesaj: UILabel!
     
     
-    
+    func umut(Umut : String) {
+        
+    }
     
 
     override func viewDidLoad() {
@@ -30,10 +33,10 @@ class TWViewController: UIViewController {
         kontrolEmail.text = "bilgeis@projectgroup.com"
         parolaKontrol.text = "iOSProgramlama"
         if emailText.text == kontrolEmail.text || parolaText.text == parolaKontrol.text  {
-            sender.setTitle("Hoşgeldiniz", for: .normal)
+            ekranMesaj.text = "Doğru"
             
         }else {
-            ()
+            ekranMesaj.text = "Hatalı"
         }
         
     }
@@ -43,8 +46,24 @@ class TWViewController: UIViewController {
         performSegue(withIdentifier: "basaDonus", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "basaDonus" || ekranMesaj.text == "Doğru" {
+            
+            let gidilecekVC = segue.destination as! FWViewController
+            
+            gidilecekVC.gecenText = "Hoşgeldiniz…"
+            
+            
+        } else {
+            let gidilecekVC = segue.destination as! FWViewController
+            
+            gidilecekVC.gecenText = "Hatalı Giriş"
+        }
+    
+  
+    }
     
     
-
-
 }
+
+

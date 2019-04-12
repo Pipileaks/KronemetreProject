@@ -32,7 +32,7 @@ var baslangicZamani = TimeInterval()
         
         saat.text = "\(strdakika):\(strsaniye):\(strsalie)"
         
-        if saniye > 4 {
+        if saniye > 0 {
             zamanlayici.invalidate()
             
             performSegue(withIdentifier: "birinciGecis", sender: self)

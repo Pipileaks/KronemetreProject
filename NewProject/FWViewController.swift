@@ -10,13 +10,15 @@ import UIKit
 
 class FWViewController: UIViewController {
     
+    var gecenText : String?
+    
     @IBOutlet weak var sonText: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        sonText.text = gecenText
     }
     
 

@@ -62,6 +62,7 @@
                                 <state key="normal" title="Giriş Yap"/>
                                 <connections>
                                     <action selector="girisYapButton:" destination="h6a-F3-GpT" eventType="touchUpInside" id="2f0-40-zRD"/>
+                                    <segue destination="M5H-9F-qbb" kind="show" identifier="ucuncuGecis" id="lrT-3b-0tB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyJ-NN-nlm">
@@ -101,11 +102,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZU-SO-eBL">
+                                <rect key="frame" x="148" y="57" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BAe-9D-Nrd"/>
                     </view>
                     <connections>
+                        <outlet property="ekranMesaj" destination="NZU-SO-eBL" id="UhJ-MZ-3Nq"/>
                         <outlet property="emailText" destination="eB7-bO-727" id="wpJ-qQ-8ox"/>
                         <outlet property="kontrolEmail" destination="dli-QW-ZFw" id="bHg-qu-7NP"/>
                         <outlet property="parolaKontrol" destination="y1I-ph-iHu" id="h5C-1E-VfY"/>
