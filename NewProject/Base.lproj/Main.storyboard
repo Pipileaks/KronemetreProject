@@ -68,6 +68,10 @@
                                 <rect key="frame" x="278" y="33" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Kayıt Ol"/>
+                                <connections>
+                                    <action selector="kayitOl:" destination="h6a-F3-GpT" eventType="touchUpInside" id="1Dk-Yw-1El"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="basaDonus" id="5O1-ou-4bK"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-oS-sUc">
                                 <rect key="frame" x="121" y="154" width="125" height="30"/>

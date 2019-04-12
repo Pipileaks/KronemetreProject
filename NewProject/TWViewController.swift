@@ -36,9 +36,12 @@ class TWViewController: UIViewController {
             ()
         }
         
-        
     }
     
+    @IBAction func kayitOl(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "basaDonus", sender: self)
+    }
     
     
     
