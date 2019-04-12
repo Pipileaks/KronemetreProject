@@ -8,23 +8,47 @@
 
 import UIKit
 
-class SWViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+@objcMembers class SWViewController: UIViewController {
+var baslangicZamani = TimeInterval()
+    
+    func guncellemeZamani(){
+        
+        
+        let simdikiZaman = NSDate.timeIntervalSinceReferenceDate
+        
+        var gecenZaman : TimeInterval = simdikiZaman - baslangicZamani
+        
+        let dakika = Int(gecenZaman / 60.0)
+        gecenZaman -= (TimeInterval(dakika) * 60.0)
+        
+        let saniye = Int(gecenZaman)
+        gecenZaman -= TimeInterval(saniye)
+        
+        let salise = Int(gecenZaman * 100)
+        
+        let strdakika = String(format: "%02d", dakika)
+        let strsaniye = String(format: "%02d", saniye)
+        let strsalie = String(format: "%02d", salise)
+        
+        saat.text = "\(strdakika):\(strsaniye):\(strsalie)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var zamanlayici = Timer()
+    
+    @IBOutlet weak var saat: UILabel!
+    
+    @IBAction func basla(_ sender: UIButton) {
+        
+        let aSelector : Selector = #selector(SWViewController.guncellemeZamani)
+        zamanlayici = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        
+        baslangicZamani = NSDate.timeIntervalSinceReferenceDate
+        
     }
-    */
-
+    
+    @IBAction func dur(_ sender: UIButton) {
+        
+        zamanlayici.invalidate()
+    }
+    
 }
