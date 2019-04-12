@@ -34,6 +34,8 @@ var baslangicZamani = TimeInterval()
         
         if saniye > 4 {
             zamanlayici.invalidate()
+            
+            performSegue(withIdentifier: "birinciGecis", sender: self)
         }
     }
     
