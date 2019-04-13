@@ -17,14 +17,11 @@ class TWViewController: UIViewController {
     @IBOutlet weak var ekranMesaj: UILabel!
     
     
-    func umut(Umut : String) {
-        
-    }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -47,20 +44,20 @@ class TWViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "basaDonus" || ekranMesaj.text == "Doğru" {
+        if segue.identifier == "birinciGecis" || ekranMesaj.text == "Doğru" {
             
             let gidilecekVC = segue.destination as! FWViewController
             
             gidilecekVC.gecenText = "Hoşgeldiniz…"
             
             
-        } else {
+        } else if segue.identifier == "birinciGecis" || ekranMesaj.text == "Hatalı"  {
             let gidilecekVC = segue.destination as! FWViewController
             
             gidilecekVC.gecenText = "Hatalı Giriş"
         }
-    
-  
+        
+        
     }
     
     

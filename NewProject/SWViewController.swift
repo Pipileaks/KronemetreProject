@@ -9,7 +9,7 @@
 import UIKit
 
 @objcMembers class SWViewController: UIViewController {
-var baslangicZamani = TimeInterval()
+    var baslangicZamani = TimeInterval()
     
     func guncellemeZamani(){
         
@@ -32,7 +32,7 @@ var baslangicZamani = TimeInterval()
         
         saat.text = "\(strdakika):\(strsaniye):\(strsalie)"
         
-        if saniye > 0 {
+        if saniye > 4 {
             zamanlayici.invalidate()
             
             performSegue(withIdentifier: "birinciGecis", sender: self)
@@ -41,7 +41,7 @@ var baslangicZamani = TimeInterval()
     
     var zamanlayici = Timer()
     
-   
+    
     @IBOutlet weak var saat: UILabel!
     
     @IBAction func basla(_ sender: UIButton) {
@@ -51,10 +51,10 @@ var baslangicZamani = TimeInterval()
         
         baslangicZamani = NSDate.timeIntervalSinceReferenceDate
         
-       
+        
         
     }
     
-  
+    
     
 }

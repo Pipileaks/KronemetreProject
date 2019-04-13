@@ -14,14 +14,14 @@ class FWViewController: UIViewController {
     
     @IBOutlet weak var sonText: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         sonText.text = gecenText
     }
     
-
- 
-
+    
+    
+    
 }
